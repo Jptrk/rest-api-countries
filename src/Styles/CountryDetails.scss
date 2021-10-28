@@ -1,0 +1,154 @@
+@import "../Styles/variables";
+
+.details-container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 80px 0;
+  min-height: 800px;
+
+  label {
+    font-weight: 600;
+  }
+
+  .back-container {
+    margin-bottom: 80px;
+    .back-button {
+      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.08);
+      background-color: $semiDark;
+      border: none;
+      border-radius: 5px;
+      padding: 15px 50px;
+      font-size: 16px;
+      cursor: pointer;
+
+      .arrow {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  @media (max-width: 1520px) {
+    width: 100%;
+    margin: initial;
+    padding: 80px 80px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: initial;
+    padding: 80px 40px;
+  }
+}
+
+.info-container {
+  display: flex;
+
+  .flag {
+    width: 100%;
+    flex: 100%;
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 20px;
+
+    padding-left: 180px;
+    width: 100%;
+
+    @media (max-width: 1440px) {
+      padding-left: 10%;
+    }
+
+    .country-name {
+      margin-bottom: 30px;
+    }
+
+    .country-info {
+      .flex-items {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 80px;
+
+        .left {
+          margin-right: 20px;
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 300;
+          margin-bottom: 10px;
+        }
+      }
+
+      .border-countries {
+        display: flex;
+        align-items: baseline;
+
+        .border-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        label {
+          margin-right: 10px;
+          min-width: 140px;
+        }
+        .border {
+          padding: 5px 15px;
+          text-align: center;
+
+          border-radius: 5px;
+          box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.08);
+
+          cursor: pointer;
+          user-select: none;
+          min-width: 80px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1130px) {
+    flex-direction: column;
+
+    .flag {
+      margin-bottom: 50px;
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .info {
+      padding-left: 0;
+      padding-top: 0;
+
+      .country-info {
+        .border-countries {
+          flex-wrap: wrap;
+
+          label {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      .flex-items {
+        .left {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+@import "./variables";
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 50px;
+  font-size: 14px;
+  user-select: none;
+
+  .country-input {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.08);
+    width: 30%;
+
+    .search-icon {
+      margin-right: 20px;
+    }
+
+    input {
+      border: none;
+      background-color: transparent;
+      outline: none;
+      width: 100%;
+    }
+  }
+
+  .filter-region {
+    width: 200px;
+    cursor: pointer;
+    position: relative;
+
+    .dropdown {
+      padding: 20px 20px;
+      width: 100%;
+      appearance: none;
+      border: none;
+      outline: none;
+      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.08);
+      height: 58px;
+      border-radius: 5px;
+
+      .place-holder {
+        user-select: none;
+        position: relative;
+
+        &:after,
+        &:before {
+          content: "";
+          background-color: #111517;
+          height: 6px;
+          width: 2px;
+          position: absolute;
+          transition: 500ms ease;
+        }
+
+        &:before {
+          right: 10px;
+          transform: translateY(120%) rotate(-45deg);
+        }
+
+        &:after {
+          right: 6px;
+          transform: translateY(120%) rotate(45deg);
+        }
+      }
+
+      .active {
+        &:before {
+          right: 10px;
+          transform: translateY(120%) rotate(45deg);
+        }
+
+        &:after {
+          right: 6px;
+          transform: translateY(120%) rotate(-45deg);
+        }
+      }
+    }
+
+    .dropdown-list {
+      position: absolute;
+      width: 100%;
+      margin-top: 5px;
+      border-radius: 5px;
+      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.08);
+      max-height: 0px;
+      overflow: hidden;
+      transition: max-height 500ms ease;
+
+      ul {
+        list-style-type: none;
+        padding: 10px 0;
+
+        li {
+          padding: 5px 20px;
+        }
+      }
+    }
+
+    .show-list {
+      max-height: 300px;
+    }
+  }
+
+  @media (max-width: 1520px) {
+    padding: 0 80px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+
+    .country-input {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+}

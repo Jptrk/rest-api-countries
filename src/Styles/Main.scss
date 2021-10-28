@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+@import "variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  font-size: 16px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.App {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+// Dark Theme
+.dark {
+  color: $light;
+  background-color: $dark;
+  transition: all 500ms;
+
+  button {
+    color: $light;
+  }
+
+  a {
+    color: $light;
+  }
+
+  input {
+    color: $light;
+  }
+
+  .country-input {
+    background-color: $semiDark;
+
+    ::placeholder {
+      color: $light;
+    }
+  }
+
+  .filter-region {
+    .dropdown {
+      color: $light;
+      background-color: $semiDark;
+
+      .place-holder {
+        &:after,
+        &:before {
+          background-color: white !important;
+        }
+      }
+    }
+
+    .dropdown-list {
+      background-color: $semiDark;
+
+      ul {
+        li {
+          &:hover {
+            background-color: $dark;
+          }
+        }
+      }
+    }
+  }
+
+  .card {
+    background-color: $semiDark;
+  }
+
+  .details-container {
+    .back-container {
+      .back-button {
+        background-color: $semiDark;
+      }
+    }
+
+    .border {
+      background-color: $semiDark;
+    }
+  }
+}
+
+// Light Theme
+.light {
+  color: $dark;
+  background-color: $light;
+  transition: all 500ms;
+
+  button {
+    color: $dark;
+  }
+
+  a {
+    color: $dark;
+  }
+
+  input {
+    color: $dark;
+  }
+
+  .country-input {
+    background-color: white;
+    .place-holder {
+      user-select: none;
+      position: relative;
+    }
+    ::placeholder {
+      color: $dark;
+    }
+  }
+
+  .filter-region {
+    .dropdown {
+      color: $dark;
+      background-color: white;
+    }
+
+    .dropdown-list {
+      background-color: white;
+
+      ul {
+        li {
+          &:hover {
+            background-color: $light;
+          }
+        }
+      }
+    }
+  }
+
+  .card {
+    background-color: white;
+  }
+
+  .details-container {
+    .back-container {
+      .back-button {
+        background-color: white;
+      }
+    }
+
+    .border {
+      background-color: white;
+    }
+  }
+}

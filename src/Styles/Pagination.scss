@@ -1,0 +1,44 @@
+@import "../Styles/variables";
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+
+  .numbers {
+    display: flex;
+    margin: 0 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .pageNumber {
+      cursor: pointer;
+      padding: 10px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 10px 10px;
+    }
+
+    .active {
+      color: white;
+      background-color: $dark;
+    }
+
+    .dark-active {
+      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.08);
+      background-color: $semiDark;
+    }
+  }
+
+  .next,
+  .prev {
+    cursor: pointer;
+    margin: 0 30px;
+  }
+}

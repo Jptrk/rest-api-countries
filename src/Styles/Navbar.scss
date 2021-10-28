@@ -1,0 +1,56 @@
+@import "variables";
+
+.navbar {
+  padding: 25px 0;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.151);
+  background-color: white;
+
+  .nav-content {
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      h1 {
+        font-size: 25px;
+      }
+    }
+
+    .color-toggle {
+      button {
+        border: none;
+        font-weight: 600;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 16px;
+
+        .moon-icon {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1520px) {
+    padding: 25px 80px;
+    .nav-content {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+
+    .nav-content {
+      * {
+        font-size: calc(10px + 1.2vw) !important;
+      }
+    }
+  }
+}
+
+.nav-dark {
+  background-color: $semiDark;
+}
