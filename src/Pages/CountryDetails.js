@@ -1,4 +1,4 @@
-import "../../Styles/CountryDetails.scss";
+import "../Styles/CountryDetails.scss";
 //Icon
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 //Library
