@@ -1,11 +1,11 @@
-import "../Styles/CountryDetails.scss";
+import "../../Styles/CountryDetails.scss";
 //Icon
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 //Library
 import { useLocation } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const CountryDetails = ({ data }) => {
