@@ -5,13 +5,20 @@ import Country from "../Components/Country/Country";
 import Pagination from "../Components/Pagination";
 import Filter from "../Components/Filter";
 //Library
-import { useCallback, useEffect, useState } from "react";
+import { useMemo, useEffect, useState } from "react";
 
-const Countries = ({ data, theme }) => {
-  const [page, setPage] = useState(1);
-  const [filter, setFilter] = useState("Filter by Region");
+const Countries = ({
+  data,
+  theme,
+  page,
+  setPage,
+  filter,
+  setFilter,
+  searchInput,
+  setSearchInput,
+}) => {
   const [countries, setCountries] = useState([]);
-  const [searchInput, setSearchInput] = useState("");
+
   const itemPerPage = 20;
 
   //Functions
@@ -20,16 +27,16 @@ const Countries = ({ data, theme }) => {
     if (page !== 1) setPage(1);
   };
 
-  const filterData = useCallback(() => {
+  const filterData = useMemo(() => {
     if (filter === "Filter by Region") {
-      setCountries(data);
+      return data;
     } else {
-      setCountries(data.filter((country) => country.region === filter));
+      return data.filter((country) => country.region === filter);
     }
   }, [data, filter]);
 
   useEffect(() => {
-    filterData();
+    setCountries(filterData);
   }, [filter, filterData]);
 
   useEffect(() => {

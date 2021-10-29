@@ -77,10 +77,14 @@ const CountryDetails = ({ data }) => {
                     {details[0].topLevelDomain[0]}
                   </p>
                   <p>
-                    <label>Currencies:</label> {details[0].currencies[0].name}
+                    <label>Currencies:</label>{" "}
+                    {details[0].hasOwnProperty("currencies")
+                      ? details[0].currencies[0].name
+                      : ""}
                   </p>
                   <p>
-                    <label>Language:</label> {details[0].languages[0].name}
+                    <label>Language:</label>{" "}
+                    {details[0].languages.map((lang) => lang.name).join(", ")}
                   </p>
                 </div>
               </div>

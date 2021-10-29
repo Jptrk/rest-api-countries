@@ -13,7 +13,9 @@ function App() {
   //States
   const [theme, setTheme] = useState("light");
   const [data, setData] = useState([]);
-
+  const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState("Filter by Region");
+  const [searchInput, setSearchInput] = useState("");
   useEffect(() => {
     fetch_data();
   }, []);
@@ -29,7 +31,18 @@ function App() {
       <Navbar setTheme={setTheme} theme={theme} />
       <Switch>
         <Route path="/" exact>
-          {data.length && <Countries data={data} theme={theme} />}
+          {data.length && (
+            <Countries
+              data={data}
+              theme={theme}
+              page={page}
+              setPage={setPage}
+              filter={filter}
+              setFilter={setFilter}
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
+            />
+          )}
         </Route>
         <Route path="/country/:name" exact>
           <CountryDetails data={data} />
