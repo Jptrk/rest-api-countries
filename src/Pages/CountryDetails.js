@@ -18,7 +18,7 @@ const CountryDetails = ({ data }) => {
 
   //Fetch Details
   useEffect(() => {
-    setDetails(data.filter((item) => item.name === country));
+    setDetails(data.filter((item) => item.alpha3Code === country));
   }, [country, data]);
 
   //Fetch Borders
