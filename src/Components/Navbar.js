@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ setTheme, theme }) => {
   return (
-    <div className={`navbar ${theme === "dark" ? "nav-dark" : ""}`}>
+    <nav className={`navbar ${theme === "dark" ? "nav-dark" : ""}`}>
       <div className="nav-content">
         <div className="logo">
           <Link to="/">
@@ -28,7 +28,7 @@ const Navbar = ({ setTheme, theme }) => {
           </button>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -38,7 +38,7 @@ const Filter = ({
   }, [setRegions, data]);
 
   return (
-    <div className="filter-container">
+    <header className="filter-container">
       <div className="country-input">
         <FontAwesomeIcon icon={faSearch} className="search-icon" />
         <input
@@ -67,7 +67,7 @@ const Filter = ({
           </ul>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

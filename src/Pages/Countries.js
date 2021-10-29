@@ -55,7 +55,7 @@ const Countries = ({
   }, [searchInput, data, filter]);
 
   return (
-    <div className="card-container">
+    <main className="card-container">
       <Filter
         data={data}
         filter={filter}
@@ -83,7 +83,7 @@ const Countries = ({
           scrollTop={true}
         />
       )}
-    </div>
+    </main>
   );
 };
 
