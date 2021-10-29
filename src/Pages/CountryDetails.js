@@ -93,7 +93,7 @@ const CountryDetails = ({ data }) => {
                   <label>Border Countries:</label>
                   <div className="border-list">
                     {borders.map((border, key) => (
-                      <Link key={key} to={`/country/${border.name}`}>
+                      <Link key={key} to={`/country/${border.alpha3Code}`}>
                         <div className="border">{border.name}</div>
                       </Link>
                     ))}
