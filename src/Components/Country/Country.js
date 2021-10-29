@@ -3,7 +3,9 @@ import "../../Styles/Country.scss";
 //Library
 import { Link } from "react-router-dom";
 
-const Country = ({ data, theme }) => {
+const Country = ({ data }) => {
+  const countryName = data.name.replaceAll(" ", "%20");
+
   return (
     <div className="card">
       <div className="thumbnail">
@@ -14,7 +16,7 @@ const Country = ({ data, theme }) => {
 
       <div className="copy-container">
         <p className="name">
-          <Link to={`/country/${data.name}`}>{data.name}</Link>
+          <Link to={`/country/${countryName}`}>{data.name}</Link>
         </p>
         <div className="details">
           <p className="population">
